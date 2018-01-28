@@ -1,0 +1,15 @@
+Route Between Nodes: Given a directed graph, design an algorithm to find out whether there is a route between two nodes.
+
+Ideas:
+-Depth first search, or breadth first search.
+-Track previously visited node
+
+Possible Solution:
+1. Utilize a queue to hold all nodes to visit. Also use a hash table or something to hold all visited nodes.
+2. Queue up all nodes from a supposed start node, mark all as visited in hash table.
+3. Dequeue one node from the queue, and then repeat by queueing up all nodes that of the one just done.
+4. Step 2, but for the node that was dequeued.
+5. If you find the node, return true to indicate that the node was found.
+6. Repeat until you find a node where all the surrounding nodes are visited or there are no surrounding nodes.
+7. Recurse back to a previous queue that is not empty, and repeat steps 3-7.
+8. If you get back to the initial queue and you dequeue until it is empty, there there are no routes between the two nodes.

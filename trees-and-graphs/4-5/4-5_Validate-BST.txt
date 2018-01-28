@@ -1,0 +1,8 @@
+Validate BST: Implement a functiont o check is a binary tree is a binary search tree.
+
+Ideas:
+-Use in-order traversal. If the nodes visited go from smallest to largest, then there is a good chance that it is a BST.
+-HOWEVER, consider what happens if there are numbers that are the size. If there were duplicates they should go strictly on the left subtree.
+-Track the last visited left subtree and it's depth. If we do eventually visit the right subtree with the same depth with the same parent and it's the same number (cannot be smaller or BST is already violated) then we know the condition is violated.
+-Also need to track the node visited after the left node visited, as that node may potentially become the new "left subtree" if we begin to check that depth.
+-Only make the "middle node" visited to be the "left subtree" node after we check the possible right subtree to see if it still complies with the rules of BST.
