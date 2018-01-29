@@ -1,0 +1,75 @@
+Chapter 4 even questions
+
+4.2:
+
+- find the middle point: int mid = input.length/2;
+-recurse into left and right with mid points from left and right branch;
+
+//assume there is tree class already
+public TreeNode constructBinarySearchTree(Interger[] input){ //page 120
+	
+	if (input.length() <= 0){
+		return null;
+	}
+	int mid = input.length()/2
+	TreeNode root = new TreeNode(input[mid]);
+
+	int left[] = new int[mid];
+	int right[] = new int[mid-1];
+
+	int i = 0;
+	while (i < mid){
+		left[i] = input[i];
+		i++;
+	}
+	int j = 0;
+	while (j < mid-1){
+		right[j] = input[j+mid];
+		j++;
+	}
+	root.left = constructBinarySearchTree(left);
+	root.right = constructBinarySearchTree(right);
+	return root;
+}
+
+solution: p242/253, use helper to recurse with start, end, and array
+
+4.4: p121, solution 255
+-recursing to find height of left and height of right and compare if >1, then return false;
+
+public boolean checkBalance(TreeNode root){
+	if (root == null) return true;
+	int left = 1 + checkBalance(root.left);
+	int right = 1 + checkBalance(root.right);
+
+	if (abs(left - right) > 1) return false;
+
+}
+
+solution:
+separate into helper function of getting height of max of left and right + 1;
+then recurse into left and right if hegiht still <1;
+
+4.6:
+no idea.
+
+4.8:
+public TreeNode findCommonAncesor(TreeNode root, TreeNode p, TreeNode q){
+	if (root == p) return p;
+	if (root == q) return q;
+	if (root == null) return null;
+
+	
+
+}
+
+4.10:
+
+4.12:
+
+
+
+
+
+
+
