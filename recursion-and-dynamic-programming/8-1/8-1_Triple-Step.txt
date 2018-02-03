@@ -1,0 +1,54 @@
+Triple Step: A child is running up a staircase with n steps and can hop either 1 step, 2 steps, or 3 steps at a time. Implement a method to count how many possible ways the child can run up the stairs.
+
+Ideas:
+-Suppose we need to find all the ways a child can run up F(6) steps, then we need to know how many the child ran up to F(3), F(4), and F(5) steps. Armed with this information, there are only a handful of ways a child a child can produce Up to 3 steps. We can then calculate (F(3) + F(3)) + (F(4) + F(2)) + (F(5) + F(1)) = F(6). If you look at this, we can further break this down into even smaller components.
+Let's say we only want to determine the ways a child can go up 2 steps, then F(2) = 1 + F(1), and F(1) = 1 (trivial). F(3) is a bit of a special case since we need to determine our starting step since it can influence that other steps. So F(3) = 1 (3 steps) + F(2) + F(1) (only single steps)\
+
+For coding simplicity, I'm going to just let these 3 things be constants.
+F(1) = 1
+F(2) = 2
+F(3) = 4
+
+Pseudocode:
+For a number n
+F(n) = (F(n-1) + F(1)) + (F(n-2) + F(2)) + (F(n-3) + F(3))
+
+Things to watch out for:
+Don't stack overflow, watch for a breaking codition
+
+//n is the total number of steps 
+function tripleStep(n) {
+
+
+	//can be implemented without the switch if I just want just write out the values of tripleStep(1/2/3) below!
+	switch(n):
+		case 1:
+			return 1;
+			break;
+		case 2:
+			return 2;
+			break;
+		case 3:
+			return 4;
+			break;
+		default:
+			return tripleStep(n-1) + tripleStep(1) + tripleStep(n-2) + tripleStep(2) + tripleStep(n-3) + tripleStep(3);
+			break;
+}
+
+Mistakes:
+-Totally forgot to account for the fact that if I do this there will possibly be repeats.
+-Do testing here, and then tell yourself what you did wrong.
+
+Revised Code:
+function tripleStep(n) {
+	if (n > 3) {
+		return tripleStep(n-3) + tripleStep(3);
+	} else if (n === 3) {
+		return 4;
+	} else if (n === 2) {
+		return 2;
+	} else {
+		return 1;
+	}
+}
