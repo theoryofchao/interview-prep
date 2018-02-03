@@ -1,0 +1,23 @@
+Recursive Multiply: WRite a recursive function to multiply two positive integers without using the * operator. You can use addition, subtraction, and bit shifting, but you should minimize the number of those operations.
+
+Code:
+
+function recursiveMultiply(a, b, result) {
+	sum = sum || 0
+
+	if(b === 0) {
+		return result;
+	}
+	
+	if (Math.abs(b) > Math.abs(a)) {
+		return recursiveMultiply(b, a, result);
+	} else {
+		sum += a;
+		if(b > 0) {
+			return recursiveMultiply(a, b-1, result);
+		} else {
+			return recursiveMultiply(a, b+1, result);
+		}
+	}
+
+}
