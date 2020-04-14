@@ -27,10 +27,37 @@ class SinglyLinkedList {
         this.head = this.head.next;
     }
 
+    findNode(data) {
+        let current = this.head;
+
+        while (current) {
+            if (current.data === data) {
+                return current;
+            }
+            current = current.next;
+        }
+        return null;
+    }
+
     // O(n) implementation
     // Removes node that contains that value
     removeNode(data) {
+        let current = this.head;
+        let prev;
 
+        // Only if specified data was the head
+        if (current.data === data) {
+            this.head = current.next;
+        }
+        
+        while(current) {
+            if (current.data === data) {
+                prev.next = current.next;
+                break;
+            }
+            prev = current;
+            current = current.next;
+        }
     }
 
     // O(n) implementation that traverses the list
@@ -47,17 +74,24 @@ class SinglyLinkedList {
 
     printList() {
         let current = this.head;
+        let string = "";
         while(current) {
-            console.log(current.data);
+            string += (`${current.data}, `);
             current = current.next;
         }
+        console.log(string);
     }
 }
 
-let firstNode = new LinkedListNode(1);
-let secondNode = new LinkedListNode(2);
-let testList = new SinglyLinkedList(firstNode);
+let node1 = new LinkedListNode(1);
+let node2 = new LinkedListNode(2);
+let node3 = new LinkedListNode(3);
+let testList = new SinglyLinkedList(node1);
 
-testList.appendToHead(secondNode);
+testList.appendToHead(node2);
+testList.appendToHead(node3);
+testList.removeNode(1);
+let tmpNode = testList.findNode(2);
+console.log(tmpNode.data);
 testList.printList();
 console.log(testList.getLength());
