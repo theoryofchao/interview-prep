@@ -76,7 +76,7 @@ class SinglyLinkedList {
         let current = this.head;
         let string = "";
         while(current) {
-            string += (`${current.data}, `);
+            string += (`${current.data} `);
             current = current.next;
         }
         console.log(string);
