@@ -1,0 +1,22 @@
+{
+  "name": "interview-prep",
+  "version": "1.0.0",
+  "description": "Problem and Solutions for various Interview Preparation Material",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theoryofchao/interview-prep.git"
+  },
+  "keywords": [
+    "interview"
+  ],
+  "author": "Roger Chao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theoryofchao/interview-prep/issues"
+  },
+  "homepage": "https://github.com/theoryofchao/interview-prep#readme"
+}
