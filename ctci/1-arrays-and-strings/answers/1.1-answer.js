@@ -1,8 +1,14 @@
-/*
-    -O(n) runtime
-    -Utilizes Hash Table or similar to check whether character already exists
-    -Only needs to iterate through each character once
-*/
+/**
+ * Initial Checks:
+ * -Check input is actually a string
+ */
+
+/**
+ * -Utilize Hash Table or similar to check whether character already exists
+ * -Only needs to iterate through each character once
+ * 
+ * O(n) runtime, O(n) space
+ */
 const isUniqueString = input => {
     if (input.length < 2) return true;
     const set = new Set();
@@ -15,10 +21,12 @@ const isUniqueString = input => {
     return true;
 };
 
-/*
-    -O(n^2) runtime
-    -Check all remaining characters for duplicates
-*/
+/**
+ * -Use double for loops to iterate through all characters against each other
+ * -Check all remaining characters for duplicates
+ * 
+ * O(n^2) runtime, O(1) space
+ */
 const isUniqueStringNoDS = input => {
     for (let i = 0; i < input.length; i++) {
         for (j = i + 1; j < input.length; j++) {
@@ -30,5 +38,5 @@ const isUniqueStringNoDS = input => {
 
 module.exports = {
     isUniqueString,
-    isUniqueStringNoDS
+    isUniqueStringNoDS,
 };
