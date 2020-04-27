@@ -1,8 +1,0 @@
-List of Depths: Given a binary tree, design an algorithm which creates a linked list of all the nodes at each depth (e.g., if you have a tree with depth D, you'll have D linked lists).
-
-Ideas:
--Track visited nodes until you reach a leaf, and then once you reach a leaf return and add all to an hash where the key points to the node?
-
-Possible solution.
-1. Use in-order traversal starting from the root node.
-2. Traverse the tree and for every node return the node and it's depth.
