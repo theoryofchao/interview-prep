@@ -21,13 +21,14 @@ const isUniqueString = input => {
 */
 const isUniqueStringNoDS = input => {
     for (let i = 0; i < input.length; i++) {
-        for (j = i + 1; j < String.length; j++) {
+        for (j = i + 1; j < input.length; j++) {
             if (input[i] === input[j]) return false;
         }
     }
     return true;
 };
 
-console.log(isUniqueString("blah"));    //true
-console.log(isUniqueString("test"));    //false
-console.log(isUniqueString(""));        //true
+module.exports = {
+    isUniqueString,
+    isUniqueStringNoDS
+};

@@ -1,7 +1,12 @@
-let isUniqueString = input => {
-    //todo
+const isUniqueString = input => {
+    //TODO
 };
 
-let isUniqueStringNoDS = input => {
-    //todo
+const isUniqueStringNoDS = input => {
+    //TODO
+};
+
+module.exports = {
+    isUniqueString,
+    isUniqueStringNoDS
 };

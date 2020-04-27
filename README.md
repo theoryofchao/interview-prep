@@ -20,4 +20,4 @@ Good luck!
 
 # Install
 1. Run __npm install__
-2. Run __npm test__ (WIP)
+2. Run __npm test__
