@@ -1,12 +1,12 @@
 const isUniqueString = input => {
-    //TODO
+    // TODO
 };
 
 const isUniqueStringNoDS = input => {
-    //TODO
+    // TODO
 };
 
 module.exports = {
     isUniqueString,
-    isUniqueStringNoDS
+    isUniqueStringNoDS,
 };

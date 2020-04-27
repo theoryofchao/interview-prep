@@ -1,7 +1,7 @@
 const {
     isPermutationByHashMap,
     isPermutationBySorting,
-} = require('./1.2-answer');
+} = require('./1.2');
 
 describe("isPermutationBySorting", () => {
     test("Different Length Inputs", () => {
