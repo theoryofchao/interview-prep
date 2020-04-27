@@ -17,3 +17,7 @@ which took a lot of effort to dig myself out of.
 Hopefully, with that in mind, this guide can help you prepare for your technical interviews.
 
 Good luck!
+
+# Install
+1. Run __npm install__
+2. Run __npm test__ (WIP)

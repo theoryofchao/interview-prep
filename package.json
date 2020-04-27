@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/theoryofchao/interview-prep/issues"
   },
-  "homepage": "https://github.com/theoryofchao/interview-prep#readme"
+  "homepage": "https://github.com/theoryofchao/interview-prep#readme",
+  "devDependencies": {
+    "jest": "^25.4.0"
+  }
 }
